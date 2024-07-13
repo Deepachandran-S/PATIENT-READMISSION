@@ -15,7 +15,11 @@ def install(package):
     except subprocess.CalledProcessError as e:
         print(f"Failed to install {package}: {e}")'''
 import os 
+
+os.system('python -m pip install --upgrade pip')
+
 os.system('sudo pip install scikit-learn')
+
 import pip
 
 def install(package):
