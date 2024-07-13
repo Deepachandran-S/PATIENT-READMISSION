@@ -1,5 +1,13 @@
 import subprocess
 import sys
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Update pip
+install('pip --upgrade')
 
 def install(package):
     try:
