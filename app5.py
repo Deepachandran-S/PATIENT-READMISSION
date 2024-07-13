@@ -1,20 +1,25 @@
 import subprocess
 import sys
 
-import subprocess
-import sys
-
 def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to install {package}: {e}")
 
 # List of packages to install with specified versions
 packages = [
-    'streamlit==1.14.0',
-    'scikit-learn==1.0.2',
-    'pandas==1.3.5',
-    'numpy==1.21.5',
-    'lightgbm==3.3.2'
+    'streamlit',
+    'scikit-learn',
+    'pandas',
+    'numpy',
+    'lightgbm'
 ]
+
+# Install each package
+for package in packages:
+    install(package)
+
 
 # Install each package
 for package in packages:
