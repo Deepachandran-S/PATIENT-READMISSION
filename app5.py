@@ -1,13 +1,25 @@
 import subprocess
 import sys
 
+import subprocess
+import sys
+
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-install('streamlit==1.14.0')
-install('scikit-learn==1.0.2')
-install('pandas==1.3.5')
-install('numpy==1.21.5')
-install('lightgbm==3.3.2')
+
+# List of packages to install with specified versions
+packages = [
+    'streamlit==1.14.0',
+    'scikit-learn==1.0.2',
+    'pandas==1.3.5',
+    'numpy==1.21.5',
+    'lightgbm==3.3.2'
+]
+
+# Install each package
+for package in packages:
+    install(package)
+
 import streamlit as st
 import pandas as pd
 import numpy as np
