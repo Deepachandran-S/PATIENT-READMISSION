@@ -1,4 +1,4 @@
-import subprocess
+'''import subprocess
 import sys
 import subprocess
 import sys
@@ -13,7 +13,19 @@ def install(package):
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     except subprocess.CalledProcessError as e:
-        print(f"Failed to install {package}: {e}")
+        print(f"Failed to install {package}: {e}")'''
+import pip
+
+def install(package):
+    if hasattr(pip, 'main'):
+        pip.main(['install', package])
+    else:
+        from pip._internal import main as pipmain
+        pipmain(['install', package])
+
+# Example usage:
+#install('numpy')  # Replace 'numpy' with the package you want to install
+
 
 # List of packages to install with specified versions
 packages = [
