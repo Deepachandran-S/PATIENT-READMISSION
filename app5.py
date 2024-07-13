@@ -1,4 +1,4 @@
-pip instal streamlit
+pip install streamlit
 pip install sklearn
 import streamlit as st
 import pandas as pd
