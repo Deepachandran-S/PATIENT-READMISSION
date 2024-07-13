@@ -1,4 +1,13 @@
+import subprocess
+import sys
 
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+install(streamlit==1.14.0)
+install(scikit-learn==1.0.2)
+install(pandas==1.3.5)
+install(numpy==1.21.5)
+install(lightgbm==3.3.2)
 import streamlit as st
 import pandas as pd
 import numpy as np
