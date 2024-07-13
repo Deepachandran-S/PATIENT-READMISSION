@@ -41,9 +41,7 @@ for package in packages:
     install(package)
 
 
-# Install each package
-for package in packages:
-    install(package)
+
 
 import streamlit as st
 import pandas as pd
